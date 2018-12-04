@@ -1,0 +1,782 @@
+
+*** Running vivado
+    with args -log nexys4_fft_demo.vds -m64 -mode batch -messageDb vivado.pb -notrace -source nexys4_fft_demo.tcl
+
+
+****** Vivado v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source nexys4_fft_demo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2016.2/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'fft_mag.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+fft_mag_xlconcat_0_0
+fft_mag_xlconstant_1_0
+fft_mag_xlconstant_0_0
+fft_mag_c_addsub_0_0
+fft_mag_axis_register_slice_2_0
+fft_mag_cordic_0_0
+fft_mag_xlconstant_2_0
+fft_mag_mult_gen_0_0
+fft_mag_xlslice_0_0
+fft_mag_mult_gen_1_0
+fft_mag_xlslice_1_0
+fft_mag_xfft_0_0
+
+Command: synth_design -top nexys4_fft_demo -part xc7a100tcsg324-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22370 
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:22]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:23]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:24]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:25]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1084.523 ; gain = 189.324 ; free physical = 1737 ; free virtual = 11304
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'nexys4_fft_demo' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:7]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'xvga' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:176]
+INFO: [Synth 8-256] done synthesizing module 'xvga' (2#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:176]
+INFO: [Synth 8-638] synthesizing module 'display_8hex' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:68]
+	Parameter bits bound to: 13 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'display_8hex' (3#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:68]
+INFO: [Synth 8-638] synthesizing module 'debounce' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:8]
+	Parameter DELAY bound to: 1000000 - type: integer 
+	Parameter COUNT bound to: 21 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (4#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:8]
+INFO: [Synth 8-638] synthesizing module 'xadc_demo' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/xadc_demo_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'xadc_demo' (5#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/xadc_demo_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'oversample64' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/oversampler.v:7]
+INFO: [Synth 8-256] done synthesizing module 'oversample64' (6#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/oversampler.v:7]
+INFO: [Synth 8-638] synthesizing module 'bram_frame' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/bram_frame_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'bram_frame' (7#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/bram_frame_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'hanning' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/hanning_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'hanning' (8#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/hanning_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'synchronize' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:158]
+	Parameter NSYNC bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'synchronize' (9#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:158]
+INFO: [Synth 8-638] synthesizing module 'level_to_pulse' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:40]
+INFO: [Synth 8-256] done synthesizing module 'level_to_pulse' (10#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:40]
+INFO: [Synth 8-638] synthesizing module 'bram_to_fft' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/bram_to_fft.v:7]
+INFO: [Synth 8-256] done synthesizing module 'bram_to_fft' (11#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/bram_to_fft.v:7]
+INFO: [Synth 8-638] synthesizing module 'fft_mag' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:13]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_axis_register_slice_2_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_axis_register_slice_2_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_axis_register_slice_2_0' (12#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_axis_register_slice_2_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'axis_register_slice_2' of module 'fft_mag_axis_register_slice_2_0' requires 10 connections, but only 9 given [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:76]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_c_addsub_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_c_addsub_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_c_addsub_0_0' (13#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_c_addsub_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_cordic_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_cordic_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_cordic_0_0' (14#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_cordic_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_mult_gen_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_mult_gen_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_mult_gen_0_0' (15#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_mult_gen_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_mult_gen_1_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_mult_gen_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_mult_gen_1_0' (16#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_mult_gen_1_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xfft_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xfft_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xfft_0_0' (17#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xfft_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'xfft_0' of module 'fft_mag_xfft_0_0' requires 19 connections, but only 13 given [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:111]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xlconcat_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconcat_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xlconcat_0_0' (18#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconcat_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xlconstant_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconstant_0_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xlconstant_0_0' (19#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconstant_0_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xlconstant_1_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconstant_1_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xlconstant_1_0' (20#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconstant_1_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xlconstant_2_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconstant_2_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xlconstant_2_0' (21#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlconstant_2_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xlslice_0_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlslice_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xlslice_0_0' (22#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlslice_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'fft_mag_xlslice_1_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlslice_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag_xlslice_1_0' (23#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/fft_mag_xlslice_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'fft_mag' (24#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:13]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:218]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'ila_0' (25#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'bram_fft' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/bram_fft_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'bram_fft' (26#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/bram_fft_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'chroma_histogram' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/histogram.v:37]
+INFO: [Synth 8-256] done synthesizing module 'chroma_histogram' (27#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/histogram.v:37]
+INFO: [Synth 8-638] synthesizing module 'histogram' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/histogram.v:7]
+INFO: [Synth 8-256] done synthesizing module 'histogram' (28#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/histogram.v:7]
+INFO: [Synth 8-638] synthesizing module 'pwm11' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:140]
+INFO: [Synth 8-256] done synthesizing module 'pwm11' (29#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/utils.v:140]
+INFO: [Synth 8-638] synthesizing module 'chroma_calculator' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:27]
+	Parameter INNER_CHROMA_PRECISION bound to: 18 - type: integer 
+	Parameter INNER_CHROMA_WIDTH bound to: 215 - type: integer 
+	Parameter BIT_DIFFERENCE bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'chroma_bins' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/chroma_bins_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'chroma_bins' (30#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/realtime/chroma_bins_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'chroma_calculator' (31#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:27]
+INFO: [Synth 8-256] done synthesizing module 'nexys4_fft_demo' (32#1) [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:7]
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED16_B driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED16_G driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED16_R driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED17_B driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED17_G driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED17_R driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port SEG[7] driven by constant 1
+WARNING: [Synth 8-3331] design histogram has unconnected port hcount[10]
+WARNING: [Synth 8-3331] design chroma_histogram has unconnected port hcount[10]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1115.781 ; gain = 220.582 ; free physical = 1703 ; free virtual = 11272
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1115.781 ; gain = 220.582 ; free physical = 1703 ; free virtual = 11271
+---------------------------------------------------------------------------------
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'bram_fft' instantiated as 'bram2' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:241]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'bram_frame' instantiated as 'bram1' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:132]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'chroma_bins' instantiated as 'chroma_calc1/chroma_binz' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/new/chroma.v:54]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'clockgen' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:32]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_axis_register_slice_2_0' instantiated as 'fft_mag_i/axis_register_slice_2' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:76]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_c_addsub_0_0' instantiated as 'fft_mag_i/c_addsub_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:86]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_cordic_0_0' instantiated as 'fft_mag_i/cordic_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:91]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_mult_gen_0_0' instantiated as 'fft_mag_i/mult_gen_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:101]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_mult_gen_1_0' instantiated as 'fft_mag_i/mult_gen_1' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:106]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xfft_0_0' instantiated as 'fft_mag_i/xfft_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:111]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xlconcat_0_0' instantiated as 'fft_mag_i/xlconcat_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:125]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xlconstant_0_0' instantiated as 'fft_mag_i/xlconstant_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:130]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xlconstant_1_0' instantiated as 'fft_mag_i/xlconstant_1' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:132]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xlconstant_2_0' instantiated as 'fft_mag_i/xlconstant_2' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:134]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xlslice_0_0' instantiated as 'fft_mag_i/xlslice_0' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:136]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'fft_mag_xlslice_1_0' instantiated as 'fft_mag_i/xlslice_1' [/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/hdl/fft_mag.v:139]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'hanning' instantiated as 'hanning_values' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:142]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'ila_0' instantiated as 'your_instance_name' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:218]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'xadc_demo' instantiated as 'xadc_demo' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:75]
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp/bram_fft_in_context.xdc] for cell 'bram2'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp/bram_fft_in_context.xdc] for cell 'bram2'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_2/xadc_demo_in_context.xdc] for cell 'xadc_demo'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_2/xadc_demo_in_context.xdc] for cell 'xadc_demo'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_3/clk_wiz_0_in_context.xdc] for cell 'clockgen'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_3/clk_wiz_0_in_context.xdc] for cell 'clockgen'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_4/bram_frame_in_context.xdc] for cell 'bram1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_4/bram_frame_in_context.xdc] for cell 'bram1'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_5/hanning_in_context.xdc] for cell 'hanning_values'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_5/hanning_in_context.xdc] for cell 'hanning_values'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_6/chroma_bins_in_context.xdc] for cell 'chroma_calc1/chroma_binz'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_6/chroma_bins_in_context.xdc] for cell 'chroma_calc1/chroma_binz'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_7/ila_0_in_context.xdc] for cell 'your_instance_name'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_7/ila_0_in_context.xdc] for cell 'your_instance_name'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_8/fft_mag_axis_register_slice_2_0_in_context.xdc] for cell 'fft_mag_i/axis_register_slice_2'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_8/fft_mag_axis_register_slice_2_0_in_context.xdc] for cell 'fft_mag_i/axis_register_slice_2'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_9/fft_mag_c_addsub_0_0_in_context.xdc] for cell 'fft_mag_i/c_addsub_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_9/fft_mag_c_addsub_0_0_in_context.xdc] for cell 'fft_mag_i/c_addsub_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_10/fft_mag_cordic_0_0_in_context.xdc] for cell 'fft_mag_i/cordic_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_10/fft_mag_cordic_0_0_in_context.xdc] for cell 'fft_mag_i/cordic_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_11/fft_mag_mult_gen_0_0_in_context.xdc] for cell 'fft_mag_i/mult_gen_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_11/fft_mag_mult_gen_0_0_in_context.xdc] for cell 'fft_mag_i/mult_gen_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_12/fft_mag_mult_gen_1_0_in_context.xdc] for cell 'fft_mag_i/mult_gen_1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_12/fft_mag_mult_gen_1_0_in_context.xdc] for cell 'fft_mag_i/mult_gen_1'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_13/fft_mag_xfft_0_0_in_context.xdc] for cell 'fft_mag_i/xfft_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_13/fft_mag_xfft_0_0_in_context.xdc] for cell 'fft_mag_i/xfft_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_14/fft_mag_xlconstant_0_0_in_context.xdc] for cell 'fft_mag_i/xlconstant_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_14/fft_mag_xlconstant_0_0_in_context.xdc] for cell 'fft_mag_i/xlconstant_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_15/fft_mag_xlconstant_1_0_in_context.xdc] for cell 'fft_mag_i/xlconstant_1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_15/fft_mag_xlconstant_1_0_in_context.xdc] for cell 'fft_mag_i/xlconstant_1'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_16/fft_mag_xlconstant_2_0_in_context.xdc] for cell 'fft_mag_i/xlconstant_2'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_16/fft_mag_xlconstant_2_0_in_context.xdc] for cell 'fft_mag_i/xlconstant_2'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_17/fft_mag_xlslice_0_0_in_context.xdc] for cell 'fft_mag_i/xlslice_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_17/fft_mag_xlslice_0_0_in_context.xdc] for cell 'fft_mag_i/xlslice_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_18/fft_mag_xlslice_1_0_in_context.xdc] for cell 'fft_mag_i/xlslice_1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_18/fft_mag_xlslice_1_0_in_context.xdc] for cell 'fft_mag_i/xlslice_1'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_19/fft_mag_xlconcat_0_0_in_context.xdc] for cell 'fft_mag_i/xlconcat_0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_19/fft_mag_xlconcat_0_0_in_context.xdc] for cell 'fft_mag_i/xlconcat_0'
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys4_fft_demo_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/nexys4_fft_demo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1491.480 ; gain = 0.004 ; free physical = 1509 ; free virtual = 11077
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bram1' at clock pin 'clka' is different from the actual clock period '9.615', this can result in different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bram2' at clock pin 'clka' is different from the actual clock period '9.615', this can result in different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'hanning_values' at clock pin 'clka' is different from the actual clock period '9.615', this can result in different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'your_instance_name' at clock pin 'clk' is different from the actual clock period '4.808', this can result in different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'chroma_calc1/chroma_binz' at clock pin 'clka' is different from the actual clock period '9.615', this can result in different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1509 ; free virtual = 11078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1509 ; free virtual = 11078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_3/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/synth_1/.Xil/Vivado-22365-eecs-digital-19/dcp_3/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property MARK_DEBUG = true for hanning_value[5]. (constraint file  /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/constrs_1/imports/constraints/Nexys4DDR_Master.xdc, line 316).
+Applied set_property DONT_TOUCH = true for fft_mag_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/axis_register_slice_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/c_addsub_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/cordic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/mult_gen_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/mult_gen_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xfft_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xlconstant_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xlconstant_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xlslice_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for fft_mag_i/xlslice_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1509 ; free virtual = 11078
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1505 ; free virtual = 11074
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	              216 Bit    Registers := 1     
+	              192 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               15 Bit    Registers := 3     
+	               12 Bit    Registers := 6     
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 5     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 64    
++---Muxes : 
+	   2 Input    216 Bit        Muxes := 2     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	  16 Input      7 Bit        Muxes := 8     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 132   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module nexys4_fft_demo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 2     
+	               12 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+Module xvga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module display_8hex 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	  16 Input      7 Bit        Muxes := 8     
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 42    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 126   
+Module oversample64 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module synchronize 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module level_to_pulse 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module bram_to_fft 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module chroma_histogram 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module histogram 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
+Module pwm11 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
+Module chroma_calculator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
++---Registers : 
+	              216 Bit    Registers := 1     
+	              192 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    216 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1505 ; free virtual = 11074
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "clean" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'histo/blank1_reg' into 'chroma_histogram/blank1_reg' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/histogram.v:29]
+INFO: [Synth 8-4471] merging register 'histo/vheight_reg[9:0]' into 'chroma_histogram/vheight_reg[9:0]' [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/histogram.v:28]
+DSP Report: Generating DSP fsample_hanning0, operation Mode is: A*B.
+DSP Report: operator fsample_hanning0 is absorbed into DSP fsample_hanning0.
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED16_B driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED16_G driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED16_R driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED17_B driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED17_G driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port LED17_R driven by constant 0
+WARNING: [Synth 8-3917] design nexys4_fft_demo has port SEG[7] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1505 ; free virtual = 11074
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:23 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1505 ; free virtual = 11074
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|nexys4_fft_demo | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'display/seg_reg[4]' (FD) to 'display/seg_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\display/seg_reg[6] )
+WARNING: [Synth 8-3332] Sequential element (display/seg_reg[6]) is unused and will be removed from module nexys4_fft_demo.
+WARNING: [Synth 8-3332] Sequential element (display/seg_reg[4]) is unused and will be removed from module nexys4_fft_demo.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1489 ; free virtual = 11058
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1489 ; free virtual = 11058
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clockgen/clk_out1' to pin 'clockgen/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clockgen/clk_out2' to pin 'clockgen/bbstub_clk_out2/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clockgen/clk_out3' to pin 'clockgen/bbstub_clk_out3/O'
+INFO: [Synth 8-5820] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:32 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1402 ; free virtual = 10971
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1491.480 ; gain = 596.281 ; free physical = 1388 ; free virtual = 10957
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[31]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[30]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[29]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[28]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[27]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[26]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[25]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[24]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[23]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[22]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[21]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[20]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[19]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[18]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[17]) is unused and will be removed from module bram_to_fft.
+WARNING: [Synth 8-3332] Sequential element (frame_tdata_reg[16]) is unused and will be removed from module bram_to_fft.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/imports/hdl/nexys4_fft_demo.v:113]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++----------------+---------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name     | RTL Name      | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------+---------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|nexys4_fft_demo | hsync_out_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|nexys4_fft_demo | vsync_out_reg | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++----------------+---------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |clk_wiz_0                       |         1|
+|2     |xadc_demo                       |         1|
+|3     |bram_frame                      |         1|
+|4     |hanning                         |         1|
+|5     |fft_mag_axis_register_slice_2_0 |         1|
+|6     |fft_mag_c_addsub_0_0            |         1|
+|7     |fft_mag_cordic_0_0              |         1|
+|8     |fft_mag_mult_gen_0_0            |         1|
+|9     |fft_mag_mult_gen_1_0            |         1|
+|10    |fft_mag_xfft_0_0                |         1|
+|11    |fft_mag_xlconcat_0_0            |         1|
+|12    |fft_mag_xlconstant_0_0          |         1|
+|13    |fft_mag_xlconstant_1_0          |         1|
+|14    |fft_mag_xlconstant_2_0          |         1|
+|15    |fft_mag_xlslice_0_0             |         1|
+|16    |fft_mag_xlslice_1_0             |         1|
+|17    |ila_0                           |         1|
+|18    |bram_fft                        |         1|
+|19    |chroma_bins                     |         1|
++------+--------------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------+------+
+|      |Cell                            |Count |
++------+--------------------------------+------+
+|1     |bram_fft                        |     1|
+|2     |bram_frame                      |     1|
+|3     |chroma_bins                     |     1|
+|4     |clk_wiz_0                       |     1|
+|5     |fft_mag_axis_register_slice_2_0 |     1|
+|6     |fft_mag_c_addsub_0_0            |     1|
+|7     |fft_mag_cordic_0_0              |     1|
+|8     |fft_mag_mult_gen_0_0            |     1|
+|9     |fft_mag_mult_gen_1_0            |     1|
+|10    |fft_mag_xfft_0_0                |     1|
+|11    |fft_mag_xlconcat_0_0            |     1|
+|12    |fft_mag_xlconstant_0_0          |     1|
+|13    |fft_mag_xlconstant_1_0          |     1|
+|14    |fft_mag_xlconstant_2_0          |     1|
+|15    |fft_mag_xlslice_0_0             |     1|
+|16    |fft_mag_xlslice_1_0             |     1|
+|17    |hanning                         |     1|
+|18    |ila_0                           |     1|
+|19    |xadc_demo                       |     1|
+|20    |CARRY4                          |   140|
+|21    |DSP48E1                         |     1|
+|22    |LUT1                            |   483|
+|23    |LUT2                            |    64|
+|24    |LUT3                            |    86|
+|25    |LUT4                            |    55|
+|26    |LUT5                            |   290|
+|27    |LUT6                            |   283|
+|28    |SRL16E                          |     2|
+|29    |FDRE                            |  1203|
+|30    |IBUF                            |    23|
+|31    |OBUF                            |    54|
++------+--------------------------------+------+
+
+Report Instance Areas: 
++------+--------------------+------------------+------+
+|      |Instance            |Module            |Cells |
++------+--------------------+------------------+------+
+|1     |top                 |                  |  3056|
+|2     |  db0               |debounce          |  1218|
+|3     |  osamp64_1         |oversample64      |   102|
+|4     |  vsync_synchronize |synchronize       |     2|
+|5     |  vsync_ltp         |level_to_pulse    |     2|
+|6     |  bram_to_fft_0     |bram_to_fft       |    82|
+|7     |  fft_mag_i         |fft_mag           |   291|
+|8     |  pwm_out           |pwm11             |    51|
+|9     |  chroma_calc1      |chroma_calculator |   801|
+|10    |  chroma_histogram  |chroma_histogram  |    38|
+|11    |  display           |display_8hex      |    58|
+|12    |  histo             |histogram         |    21|
+|13    |  xvga1             |xvga              |   127|
++------+--------------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.492 ; gain = 605.293 ; free physical = 1376 ; free virtual = 10945
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1500.492 ; gain = 113.453 ; free physical = 1376 ; free virtual = 10945
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 1500.500 ; gain = 605.301 ; free physical = 1377 ; free virtual = 10946
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 164 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+171 Infos, 67 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1532.512 ; gain = 541.754 ; free physical = 1377 ; free virtual = 10946
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1564.527 ; gain = 0.000 ; free physical = 1374 ; free virtual = 10944
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  4 17:30:41 2018...

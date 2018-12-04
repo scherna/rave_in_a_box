@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="xadc_demo_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1543435808">
+  <File Type="PA-TCL" Name="xadc_demo.tcl"/>
+  <File Type="RDS-RDS" Name="xadc_demo.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="xadc_demo_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="xadc_demo_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="xadc_demo_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="xadc_demo.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="xadc_demo_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="xadc_demo_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_demo">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_demo/xadc_demo.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Nexys4FFTDemo-master/src/ip/xadc_demo/xadc_demo.xci"/>
+        <Attr Name="ImportTime" Val="1509479801"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="xadc_demo"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xadc_demo">
+    <File Path="$PSRCDIR/sources_1/ip/xadc_demo/xadc_demo.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Nexys4FFTDemo-master/src/ip/xadc_demo/xadc_demo.xci"/>
+        <Attr Name="ImportTime" Val="1509479801"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="xadc_demo"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

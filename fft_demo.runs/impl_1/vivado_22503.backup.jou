@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Dec  4 17:33:09 2018
+# Process ID: 22503
+# Current directory: /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/impl_1
+# Command line: vivado -log nexys4_fft_demo.vdi -applog -messageDb vivado.pb -mode batch -source nexys4_fft_demo.tcl -notrace
+# Log file: /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/impl_1/nexys4_fft_demo.vdi
+# Journal file: /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source nexys4_fft_demo.tcl -notrace

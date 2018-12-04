@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<probeData version="1" minor="2">
+  <probeset name="EDA_PROBESET" active="true">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="PROBE_PORT" value="0"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="clk_104mhz"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="PROBE_PORT" value="1"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
+      </probeOptions>
+      <nets>
+        <net name="hanning_value[15]"/>
+        <net name="hanning_value[14]"/>
+        <net name="hanning_value[13]"/>
+        <net name="hanning_value[12]"/>
+        <net name="hanning_value[11]"/>
+        <net name="hanning_value[10]"/>
+        <net name="hanning_value[9]"/>
+        <net name="hanning_value[8]"/>
+        <net name="hanning_value[7]"/>
+        <net name="hanning_value[6]"/>
+        <net name="hanning_value[5]"/>
+        <net name="hanning_value[4]"/>
+        <net name="hanning_value[3]"/>
+        <net name="hanning_value[2]"/>
+        <net name="hanning_value[1]"/>
+        <net name="hanning_value[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="PROBE_PORT" value="2"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="15"/>
+      </probeOptions>
+      <nets>
+        <net name="prev_prev_osample64[14]"/>
+        <net name="prev_prev_osample64[13]"/>
+        <net name="prev_prev_osample64[12]"/>
+        <net name="prev_prev_osample64[11]"/>
+        <net name="prev_prev_osample64[10]"/>
+        <net name="prev_prev_osample64[9]"/>
+        <net name="prev_prev_osample64[8]"/>
+        <net name="prev_prev_osample64[7]"/>
+        <net name="prev_prev_osample64[6]"/>
+        <net name="prev_prev_osample64[5]"/>
+        <net name="prev_prev_osample64[4]"/>
+        <net name="prev_prev_osample64[3]"/>
+        <net name="prev_prev_osample64[2]"/>
+        <net name="prev_prev_osample64[1]"/>
+        <net name="prev_prev_osample64[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="PROBE_PORT" value="3"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="12"/>
+      </probeOptions>
+      <nets>
+        <net name="fhead[11]"/>
+        <net name="fhead[10]"/>
+        <net name="fhead[9]"/>
+        <net name="fhead[8]"/>
+        <net name="fhead[7]"/>
+        <net name="fhead[6]"/>
+        <net name="fhead[5]"/>
+        <net name="fhead[4]"/>
+        <net name="fhead[3]"/>
+        <net name="fhead[2]"/>
+        <net name="fhead[1]"/>
+        <net name="fhead[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="PROBE_PORT" value="4"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
+      </probeOptions>
+      <nets>
+        <net name="fsample[15]"/>
+        <net name="fsample[14]"/>
+        <net name="fsample[13]"/>
+        <net name="fsample[12]"/>
+        <net name="fsample[11]"/>
+        <net name="fsample[10]"/>
+        <net name="fsample[9]"/>
+        <net name="fsample[8]"/>
+        <net name="fsample[7]"/>
+        <net name="fsample[6]"/>
+        <net name="fsample[5]"/>
+        <net name="fsample[4]"/>
+        <net name="fsample[3]"/>
+        <net name="fsample[2]"/>
+        <net name="fsample[1]"/>
+        <net name="fsample[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="PROBE_PORT" value="5"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="prev_prev_done_osample64"/>
+      </nets>
+    </probe>
+  </probeset>
+</probeData>
