@@ -21,7 +21,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 parameter CHROMA_PRECISION = 16;
 parameter CHROMA_WIDTH = (12*CHROMA_PRECISION)-1;
-parameter DOT_PRECISION = 32 - 1;
+parameter DOT_PRECISION = 44 - 1;
 parameter PEAK_THRESHOLD = 100;
 
 module chroma_calculator(
@@ -78,7 +78,7 @@ module chroma_calculator(
                     inner_chroma[chroma_bin*INNER_CHROMA_PRECISION +: INNER_CHROMA_PRECISION] <= inner_chroma[chroma_bin*INNER_CHROMA_PRECISION +: INNER_CHROMA_PRECISION] + prev_prev_data;
                 end
             end
-        end
+        end else done <= 0;
     end
  
 endmodule
@@ -110,6 +110,7 @@ module dot_master(
     input wire reset,
     input wire start,
     input wire[4:0] dot_index,
+    input wire op_on_last,
     input wire include_last,
     input wire include_first,
     output reg signed[DOT_PRECISION:0] dot,
@@ -120,17 +121,21 @@ module dot_master(
     output reg fifo_read,
     output reg fifo_write,
     input wire fifo_full,
-    input wire fifo_empty
+    input wire fifo_empty,
+    input wire[CHROMA_WIDTH:0] fifo_last
     );
    
-    reg[1:0] state;
+    reg[2:0] state;
     parameter STATE_IDLE = 0;
-    parameter STATE_GET_FOCUS = 1;
-    parameter STATE_DOT = 2;
-    parameter STATE_DONE = 3;
+    parameter STATE_DELAY_FOCUS = 1;
+    parameter STATE_GET_FOCUS = 2;
+    parameter STATE_DOT = 3;
+    parameter STATE_ADD_LAST = 4;
+    parameter STATE_DONE = 5;
    
-    reg[5:0] focus_index;
-    reg[5:0] cur_index; // Current index read from fifo
+    reg[4:0] focus_index;
+    reg[4:0] cur_index; // Current index read from fifo
+    reg inner_op_on_last;
  
     reg[CHROMA_WIDTH:0] focus_chroma;
     reg signed[DOT_PRECISION:0] accum;
@@ -138,7 +143,7 @@ module dot_master(
    
     dot_engine d(
         .dot_a(focus_chroma),
-        .dot_b(fifo_out),
+        .dot_b(state == STATE_ADD_LAST ? fifo_last : fifo_out),
         .out(dot_product)
     );
    
@@ -148,18 +153,25 @@ module dot_master(
         case (state)
             STATE_IDLE: begin
                 // Reset all variables
-                cur_index <= 63;
+                cur_index <= 31;
                 done <= 0;
                 accum <= 0;
                
                 // On start, save variables and up state
                 if (start) begin
-                    state <= STATE_GET_FOCUS;
+                    state <= STATE_DELAY_FOCUS;
                     focus_index <= dot_index;
-                   
+                    inner_op_on_last <= op_on_last;
                     fifo_read <= 1; // Tell the Fifo to pulse read
                 end
                
+            end
+            
+            STATE_DELAY_FOCUS: begin
+                if (inner_op_on_last) begin
+                    state <= STATE_DOT;
+                    focus_chroma <= fifo_last;
+                end else state <= STATE_GET_FOCUS;
             end
            
             STATE_GET_FOCUS: begin
@@ -170,7 +182,7 @@ module dot_master(
                 // Stop reading once we've cycled through, and advance state.
                 if (cur_index == 0) begin
                     state <= STATE_DOT;
-                    cur_index <= 63;
+                    cur_index <= 31;
                 end else cur_index <= cur_index - 1;
                
                 // Cycle back into the fifo.
@@ -188,26 +200,41 @@ module dot_master(
                 // Note that we will continue to cycle through, as we are still fifo_reading and fifo_writing.
                
                 // Only include last if told to do so, and only include first if told to do so.
-                if (!(include_first == 0 && cur_index == 0) && !(include_last == 0 && cur_index == 63)) begin
+                if (!(include_first == 0 && cur_index == 0)) begin
                     // We have already computed dot_product between the current index and focus index
                     // using the dot engine module.
                    
-                    // If both indexes are <= 31 or both > 31, add.  Otherwise, subtract.
+                    // If both indexes are <= 15 or both > 15, add.  Otherwise, subtract.
                     // This is an implicit application of the checkerboard kernel.
-                    if ((cur_index <= 31 && focus_index <= 31) || (cur_index > 31 && focus_index > 31)) begin
-                        accum <= accum + $signed(dot_product);
-                    end else accum <= accum - $signed(dot_product);
+                    if (op_on_last) begin
+                        if (cur_index > 16) accum <= accum + $signed(dot_product);
+                        else accum <= accum - $signed(dot_product);
+                    end
+                    else if (cur_index != focus_index) begin
+                        if ((cur_index <= 15 && focus_index <= 15) || (cur_index > 15 && focus_index > 15)) begin
+                            accum <= accum + $signed(dot_product);
+                        end else accum <= accum - $signed(dot_product);
+                    end
                 end
                
                 // After last element, advance state and halt pulling off loop
                 if (cur_index == 0) begin
-                    state <= STATE_DONE;
+                    state <= (include_last && !op_on_last) ? STATE_ADD_LAST : STATE_DONE;
                     fifo_read <= 0;
                 end else
                
                 // Cycle fifo
+                fifo_write <= 1;
                 fifo_in <= fifo_out;
                 cur_index <= cur_index - 1;
+            end
+            
+            STATE_ADD_LAST: begin
+                fifo_write <= 0;
+                state <= STATE_DONE;
+                
+                if (focus_index > 15) accum <= accum + $signed(dot_product);
+                else accum <= accum - $signed(dot_product);
             end
            
             STATE_DONE: begin
@@ -240,17 +267,19 @@ module novelty(
    
     reg[CHROMA_WIDTH:0] fifo_in_novelty;
     wire[CHROMA_WIDTH:0] fifo_in_dot;
-    reg fifo_write_novelty;
-    wire fifo_write_dot;
+    reg fifo_write_novelty, fifo_read_novelty;
+    wire fifo_write_dot, fifo_read_dot;
    
     wire[CHROMA_WIDTH:0] fifo_out;
-    wire fifo_full, fifo_empty, fifo_read;
+    reg[CHROMA_WIDTH:0] fifo_last;
+    wire fifo_full, fifo_empty;
    
     reg fifo_control;
     parameter NOVELTY_CONTROL = 1;
     parameter DOT_CONTROL = 0;
     wire fifo_in = fifo_control ? fifo_in_novelty : fifo_in_dot;
     wire fifo_write = fifo_control ? fifo_write_novelty : fifo_write_dot;
+    wire fifo_read = fifo_control ? fifo_read_novelty : fifo_read_dot;
    
     chroma_fifo c (
       .srst(reset),
@@ -267,6 +296,7 @@ module novelty(
     reg[4:0] dot_index;
     wire signed[DOT_PRECISION:0] dot_out;
     wire dot_done;
+    reg fifo_op_on_last;
    
     dot_master d (
         .clk(clk),
@@ -280,15 +310,19 @@ module novelty(
        
         .fifo_out(fifo_out),
         .fifo_in(fifo_in_dot),
-        .fifo_read(fifo_read),
+        .fifo_read(fifo_read_dot),
         .fifo_write(fifo_write_dot),
         .fifo_full(fifo_full),
-        .fifo_empty(fifo_empty)
+        .fifo_empty(fifo_empty),
+        
+        .fifo_last(fifo_last),
+        .op_on_last(fifo_op_on_last)
     );
    
     reg[3:0] state;
    
     parameter STATE_IDLE = 0;
+    parameter STATE_GET_LAST = 6;
     parameter STATE_START_FIRST = 1;
     parameter STATE_END_FIRST = 2;
     parameter STATE_END_MIDDLE = 3;
@@ -305,6 +339,7 @@ module novelty(
         case (state)
             STATE_IDLE: begin
                 dot_start <= 0;
+                fifo_op_on_last <= 0;
                 fifo_control <= NOVELTY_CONTROL;
                 new_peak <= 0;
                
@@ -313,17 +348,24 @@ module novelty(
                 // then start the state machine.
                 if (new_chroma) begin
                     // Push chroma into fifo
-                    fifo_write_novelty <= 1;
                     fifo_in_novelty <= chroma_in;
+                    fifo_read_novelty <= 1;
                    
                     // Transition to new state
-                    state <= STATE_START_FIRST;
+                    state <= STATE_GET_LAST;
                 end else fifo_write_novelty <= 0;
                
+            end
+            
+            STATE_GET_LAST: begin
+                fifo_write_novelty <= 1;
+                state <= STATE_START_FIRST;
             end
            
             STATE_START_FIRST: begin
                 fifo_write_novelty <= 0;
+                fifo_read_novelty <= 0;
+                fifo_last <= fifo_out;
                 fifo_control <= DOT_CONTROL; // Release fifo control to dot product
                
                 // Start dot product on first element, don't include last, include first
@@ -364,7 +406,7 @@ module novelty(
                                
                     // Enqueue last dot product, and wait for it
                     dot_start <= 1;
-                    dot_index <= 31; // last value, need to subtract
+                    fifo_op_on_last <= 1; // last value, need to subtract
                     dot_include_first <= 0; // don't include first, as this is correction
                     dot_include_last <= 1; // do include last, as correction
                                
@@ -376,7 +418,7 @@ module novelty(
            
             STATE_END_LAST: begin
                 dot_start <= 0;
-               
+                
                 // Wait for dot product to be complete
                 if (dot_done) begin
                     // Subtract from novelty

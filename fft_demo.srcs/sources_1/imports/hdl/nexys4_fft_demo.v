@@ -49,12 +49,12 @@ module nexys4_fft_demo (
 
 // **************** BEGIN BASIC IO SETUP *******************************//
 
-    wire[31:0] mid_novelty;
+    wire[43:0] mid_novelty;
 
     // INSTANTIATE SEVEN SEGMENT DISPLAY
     display_8hex display(
         .clk(clk_65mhz),
-        .data(mid_novelty),
+        .data(mid_novelty[31:0]),
         .seg(SEG[6:0]),
         .strobe(AN));
     assign SEG[7] = 1; 
