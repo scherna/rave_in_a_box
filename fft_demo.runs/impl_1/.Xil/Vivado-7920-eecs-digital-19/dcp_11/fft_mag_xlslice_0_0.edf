@@ -1,0 +1,129 @@
+(edif fft_mag_xlslice_0_0
+  (edifversion 2 0 0)
+  (edifLevel 0)
+  (keywordmap (keywordlevel 0))
+(status
+ (written
+  (timeStamp 2018 11 01 18 10 45)
+  (program "Vivado" (version "2016.2"))
+  (comment "Built on 'Thu Jun  2 16:32:35 MDT 2016'")
+  (comment "Built by 'xbuild'")
+(metax FILE0 (string "/afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/ip/fft_mag_xlslice_0_0/synth/fft_mag_xlslice_0_0.v"))
+ )
+)
+  (Library work
+    (edifLevel 0)
+    (technology (numberDefinition ))
+   (cell fft_mag_xlslice_0_0 (celltype GENERIC)
+     (view fft_mag_xlslice_0_0 (viewtype NETLIST)
+       (interface 
+        (port (array (rename Din "Din[31:0]") 32) (direction INPUT)
+           (property k0 (string "wholebus^id{XLNX_LINE_FILE}") (owner "XLNX"))
+           (property v0 (integer 233472) (owner "XLNX"))
+        )
+        (port (array (rename Dout "Dout[15:0]") 16) (direction OUTPUT)
+           (property k0 (string "wholebus^id{XLNX_LINE_FILE}") (owner "XLNX"))
+           (property v0 (integer 233472) (owner "XLNX"))
+        )
+       )
+       (contents
+         (net (rename Din  "[15:0]Din") (joined)         )
+         (net (rename Din_0_ "Din[0]") (joined
+          (portref (member Din 31))
+          (portref (member Dout 15))
+          )
+         )
+         (net (rename Din_1_ "Din[1]") (joined
+          (portref (member Din 30))
+          (portref (member Dout 14))
+          )
+         )
+         (net (rename Din_2_ "Din[2]") (joined
+          (portref (member Din 29))
+          (portref (member Dout 13))
+          )
+         )
+         (net (rename Din_3_ "Din[3]") (joined
+          (portref (member Din 28))
+          (portref (member Dout 12))
+          )
+         )
+         (net (rename Din_4_ "Din[4]") (joined
+          (portref (member Din 27))
+          (portref (member Dout 11))
+          )
+         )
+         (net (rename Din_5_ "Din[5]") (joined
+          (portref (member Din 26))
+          (portref (member Dout 10))
+          )
+         )
+         (net (rename Din_6_ "Din[6]") (joined
+          (portref (member Din 25))
+          (portref (member Dout 9))
+          )
+         )
+         (net (rename Din_7_ "Din[7]") (joined
+          (portref (member Din 24))
+          (portref (member Dout 8))
+          )
+         )
+         (net (rename Din_8_ "Din[8]") (joined
+          (portref (member Din 23))
+          (portref (member Dout 7))
+          )
+         )
+         (net (rename Din_9_ "Din[9]") (joined
+          (portref (member Din 22))
+          (portref (member Dout 6))
+          )
+         )
+         (net (rename Din_10_ "Din[10]") (joined
+          (portref (member Din 21))
+          (portref (member Dout 5))
+          )
+         )
+         (net (rename Din_11_ "Din[11]") (joined
+          (portref (member Din 20))
+          (portref (member Dout 4))
+          )
+         )
+         (net (rename Din_12_ "Din[12]") (joined
+          (portref (member Din 19))
+          (portref (member Dout 3))
+          )
+         )
+         (net (rename Din_13_ "Din[13]") (joined
+          (portref (member Din 18))
+          (portref (member Dout 2))
+          )
+         )
+         (net (rename Din_14_ "Din[14]") (joined
+          (portref (member Din 17))
+          (portref (member Dout 1))
+          )
+         )
+         (net (rename Din_15_ "Din[15]") (joined
+          (portref (member Din 16))
+          (portref (member Dout 0))
+          )
+         )
+       )
+
+           (property X_CORE_INFO (string "xlslice,Vivado 2016.2"))
+           (property CHECK_LICENSE_TYPE (string "fft_mag_xlslice_0_0,xlslice,{}"))
+           (property CORE_GENERATION_INFO (string "fft_mag_xlslice_0_0,xlslice,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=0,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIN_WIDTH=32,DIN_FROM=15,DIN_TO=0}"))
+           (property DowngradeIPIdentifiedWarnings (string "yes"))
+           (property XLNX_LINE_FILE (integer 233472))
+     )
+   )
+  )
+(comment "Reference To The Cell Of Highest Level")
+
+  (design fft_mag_xlslice_0_0
+    (cellref fft_mag_xlslice_0_0 (libraryref work))
+    (property MLO_VERSION_NUMBER (string "2016.2_6"))
+    (property XLNX_PROJ_DIR (string "/afs/athena.mit.edu/user/c/h/cherna/fft_example"))
+    (property part (string "xc7a100tcsg324-1"))
+  )
+)

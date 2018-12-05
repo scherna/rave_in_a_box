@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Checkpoint Version="5" Minor="0">
+	<BUILD_NUMBER Name="1577090"/>
+	<FULL_BUILD Name="SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016"/>
+	<PRODUCT Name="Vivado v2016.2 (64-bit)"/>
+	<Part Name="xc7a100tcsg324-1"/>
+	<BoardPart Name="digilentinc.com:nexys4_ddr:part0:1.1"/>
+	<Top Name="fft_mag_xlslice_0_0"/>
+	<DisableAutoIOBuffers Name="1"/>
+	<OutOfContext Name="1"/>
+	<File Type="XDC_IN_CONTEXT" Name="fft_mag_xlslice_0_0_in_context.xdc" ModTime="1541110245"/>
+	<File Type="EDIF" Name="fft_mag_xlslice_0_0.edf" ModTime="1541110245"/>
+	<File Type="XN" Name="fft_mag_xlslice_0_0.xn" ModTime="1541110245"/>
+	<File Type="VERILOG_STUB" Name="fft_mag_xlslice_0_0_stub.v" ModTime="1541110245"/>
+	<File Type="VHDL_STUB" Name="fft_mag_xlslice_0_0_stub.vhdl" ModTime="1541110245"/>
+	<File Type="INCR" Name="fft_mag_xlslice_0_0.incr" ModTime="1541110245"/>
+	<File Type="RDA" Name="fft_mag_xlslice_0_0.rda" ModTime="1541110245"/>
+	<File Type="REPLAY" Name="fft_mag_xlslice_0_0_iPhysOpt.tcl" ModTime="1541110245"/>
+	<File Type="WDF" Name="fft_mag_xlslice_0_0.wdf" ModTime="1541110245"/>
+</Checkpoint>
+

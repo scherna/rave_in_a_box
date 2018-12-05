@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Checkpoint Version="5" Minor="0">
+	<BUILD_NUMBER Name="1577090"/>
+	<FULL_BUILD Name="SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016"/>
+	<PRODUCT Name="Vivado v2016.2 (64-bit)"/>
+	<Part Name="xc7a100tcsg324-3"/>
+	<Top Name="bram_frame"/>
+	<DisableAutoIOBuffers Name="1"/>
+	<OutOfContext Name="1"/>
+	<File Type="XDC_EARLY" Name="bram_frame_early.xdc" ModTime="1543435870"/>
+	<File Type="XDC_IN_CONTEXT" Name="bram_frame_in_context.xdc" ModTime="1543435861"/>
+	<File Type="EDIF" Name="bram_frame.edf" ModTime="1543435870"/>
+	<File Type="VERILOG_STUB" Name="bram_frame_stub.v" ModTime="1543435870"/>
+	<File Type="XN" Name="bram_frame.xn" ModTime="1543435870"/>
+	<File Type="VHDL_STUB" Name="bram_frame_stub.vhdl" ModTime="1543435870"/>
+	<File Type="INCR" Name="bram_frame.incr" ModTime="1543435870"/>
+	<File Type="RDA" Name="bram_frame.rda" ModTime="1543435870"/>
+	<File Type="REPLAY" Name="bram_frame_iPhysOpt.tcl" ModTime="1543435870"/>
+	<File Type="WDF" Name="bram_frame.wdf" ModTime="1543435870"/>
+</Checkpoint>
+

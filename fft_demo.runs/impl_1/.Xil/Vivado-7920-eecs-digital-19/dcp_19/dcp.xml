@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Checkpoint Version="5" Minor="0">
+	<BUILD_NUMBER Name="1577090"/>
+	<FULL_BUILD Name="SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016"/>
+	<PRODUCT Name="Vivado v2016.2 (64-bit)"/>
+	<Part Name="xc7a100tcsg324-3"/>
+	<Top Name="chroma_bins"/>
+	<DisableAutoIOBuffers Name="1"/>
+	<OutOfContext Name="1"/>
+	<File Type="XDC_EARLY" Name="chroma_bins_early.xdc" ModTime="1543534223"/>
+	<File Type="XDC_IN_CONTEXT" Name="chroma_bins_in_context.xdc" ModTime="1543534214"/>
+	<File Type="XN" Name="chroma_bins.xn" ModTime="1543534223"/>
+	<File Type="EDIF" Name="chroma_bins.edf" ModTime="1543534223"/>
+	<File Type="VERILOG_STUB" Name="chroma_bins_stub.v" ModTime="1543534223"/>
+	<File Type="VHDL_STUB" Name="chroma_bins_stub.vhdl" ModTime="1543534223"/>
+	<File Type="INCR" Name="chroma_bins.incr" ModTime="1543534223"/>
+	<File Type="RDA" Name="chroma_bins.rda" ModTime="1543534223"/>
+	<File Type="REPLAY" Name="chroma_bins_iPhysOpt.tcl" ModTime="1543534223"/>
+	<File Type="WDF" Name="chroma_bins.wdf" ModTime="1543534223"/>
+</Checkpoint>
+

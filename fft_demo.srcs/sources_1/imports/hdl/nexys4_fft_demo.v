@@ -49,10 +49,12 @@ module nexys4_fft_demo (
 
 // **************** BEGIN BASIC IO SETUP *******************************//
 
+    wire[31:0] mid_novelty;
+
     // INSTANTIATE SEVEN SEGMENT DISPLAY
     display_8hex display(
         .clk(clk_65mhz),
-        .data(32'hDEAD_BEEF),
+        .data(mid_novelty),
         .seg(SEG[6:0]),
         .strobe(AN));
     assign SEG[7] = 1; 
@@ -215,7 +217,7 @@ module nexys4_fft_demo (
         .magnitude_tuser(magnitude_tuser),
         .magnitude_tvalid(magnitude_tvalid));
     
-    ila_0 your_instance_name (
+    /*ila_0 your_instance_name (
         .clk(clk_208mhz), // input wire clk
     
     
@@ -225,7 +227,7 @@ module nexys4_fft_demo (
         .probe3(fhead), // input wire [11:0]  probe3 
         .probe4(fsample), // input wire [15:0]  probe4
         .probe5(prev_prev_done_osample64)
-    );
+    );*/
         
     // Let's only care about the range from index 0 to 1023, which represents frequencies 0 to omega/2
     // where omega is the nyquist frequency (sample rate / 2)
@@ -292,6 +294,15 @@ module nexys4_fft_demo (
                                     .last_sample(magnitude_tlast),
                                     .chroma(chroma),
                                     .done(chroma_done));
+    wire new_peak, peak;
+    
+    novelty n(.chroma_in(chroma),
+              .new_chroma(chroma_done),
+              .clk(clk_104mhz),
+              .reset(0),
+              .new_peak(new_peak),
+              .peak(peak),
+              .mid_novelty(mid_novelty));
 
 //////////////////////////////////////////////////////////////////////////////////
 //  

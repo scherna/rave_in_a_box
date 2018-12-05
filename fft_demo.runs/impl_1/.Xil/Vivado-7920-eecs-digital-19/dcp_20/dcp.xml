@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Checkpoint Version="5" Minor="0">
+	<BUILD_NUMBER Name="1577090"/>
+	<FULL_BUILD Name="SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016"/>
+	<PRODUCT Name="Vivado v2016.2 (64-bit)"/>
+	<Part Name="xc7a100tcsg324-3"/>
+	<Top Name="chroma_fifo"/>
+	<DisableAutoIOBuffers Name="1"/>
+	<OutOfContext Name="1"/>
+	<File Type="XDC_EARLY" Name="chroma_fifo_early.xdc" ModTime="1543968314"/>
+	<File Type="XDC_IN_CONTEXT" Name="chroma_fifo_in_context.xdc" ModTime="1543968303"/>
+	<File Type="SHAPE" Name="chroma_fifo.shape" ModTime="1543968314"/>
+	<File Type="EDIF" Name="chroma_fifo.edf" ModTime="1543968314"/>
+	<File Type="VERILOG_STUB" Name="chroma_fifo_stub.v" ModTime="1543968314"/>
+	<File Type="VHDL_STUB" Name="chroma_fifo_stub.vhdl" ModTime="1543968314"/>
+	<File Type="XN" Name="chroma_fifo.xn" ModTime="1543968314"/>
+	<File Type="INCR" Name="chroma_fifo.incr" ModTime="1543968314"/>
+	<File Type="RDA" Name="chroma_fifo.rda" ModTime="1543968314"/>
+	<File Type="REPLAY" Name="chroma_fifo_iPhysOpt.tcl" ModTime="1543968314"/>
+	<File Type="WDF" Name="chroma_fifo.wdf" ModTime="1543968314"/>
+</Checkpoint>
+

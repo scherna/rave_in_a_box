@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Dec  4 19:04:09 2018
+# Process ID: 28288
+# Current directory: /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/chroma_fifo_synth_1
+# Command line: vivado -log chroma_fifo.vds -mode batch -messageDb vivado.pb -notrace -source chroma_fifo.tcl
+# Log file: /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/chroma_fifo_synth_1/chroma_fifo.vds
+# Journal file: /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.runs/chroma_fifo_synth_1/vivado.jou
+#-----------------------------------------------------------
+source chroma_fifo.tcl -notrace
