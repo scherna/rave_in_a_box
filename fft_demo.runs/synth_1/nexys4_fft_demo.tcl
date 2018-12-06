@@ -3,7 +3,6 @@
 # 
 
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a100tcsg324-3
@@ -31,6 +30,8 @@ add_files -quiet /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo
 set_property used_in_implementation false [get_files /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/hanning/hanning.dcp]
 add_files -quiet /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/chroma_bins/chroma_bins.dcp
 set_property used_in_implementation false [get_files /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/chroma_bins/chroma_bins.dcp]
+add_files -quiet /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/ila_0/ila_0.dcp
+set_property used_in_implementation false [get_files /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/ila_0/ila_0.dcp]
 add_files -quiet /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/chroma_fifo/chroma_fifo.dcp
 set_property used_in_implementation false [get_files /afs/athena.mit.edu/user/c/h/cherna/Documents/fft_demo/fft_demo.srcs/sources_1/ip/chroma_fifo/chroma_fifo.dcp]
 add_files /afs/athena.mit.edu/user/c/h/cherna/Documents/Nexys4FFTDemo-master/src/bd/fft_mag/fft_mag.bd

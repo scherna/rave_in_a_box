@@ -56,12 +56,13 @@ COMPONENT chroma_fifo
   PORT (
     clk : IN STD_LOGIC;
     srst : IN STD_LOGIC;
-    din : IN STD_LOGIC_VECTOR(383 DOWNTO 0);
+    din : IN STD_LOGIC_VECTOR(191 DOWNTO 0);
     wr_en : IN STD_LOGIC;
     rd_en : IN STD_LOGIC;
-    dout : OUT STD_LOGIC_VECTOR(383 DOWNTO 0);
+    dout : OUT STD_LOGIC_VECTOR(191 DOWNTO 0);
     full : OUT STD_LOGIC;
-    empty : OUT STD_LOGIC
+    empty : OUT STD_LOGIC;
+    data_count : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -79,7 +80,8 @@ your_instance_name : chroma_fifo
     rd_en => rd_en,
     dout => dout,
     full => full,
-    empty => empty
+    empty => empty,
+    data_count => data_count
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

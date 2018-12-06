@@ -49,7 +49,7 @@ module nexys4_fft_demo (
 
 // **************** BEGIN BASIC IO SETUP *******************************//
 
-    wire[43:0] mid_novelty;
+    wire[59:0] mid_novelty;
 
     // INSTANTIATE SEVEN SEGMENT DISPLAY
     display_8hex display(
@@ -217,17 +217,21 @@ module nexys4_fft_demo (
         .magnitude_tuser(magnitude_tuser),
         .magnitude_tvalid(magnitude_tvalid));
     
-    /*ila_0 your_instance_name (
-        .clk(clk_208mhz), // input wire clk
-    
-    
-        .probe0(clk_104mhz), // input wire [0:0]  probe0  
-        .probe1(hanning_value), // input wire [15:0]  probe1 
-        .probe2(prev_prev_osample64), // input wire [14:0]  probe2 
-        .probe3(fhead), // input wire [11:0]  probe3 
-        .probe4(fsample), // input wire [15:0]  probe4
-        .probe5(prev_prev_done_osample64)
-    );*/
+    ila_0 probey (
+            .clk(clk_208mhz), // input wire clk
+        
+        
+            .probe0(clk_104mhz), // input wire [0:0]  probe0  
+            .probe1(chroma_done), // input wire [0:0]  probe1 
+            .probe2(focus_index_out), // input wire [4:0]  probe2 
+            .probe3(cur_index_out), // input wire [4:0]  probe3 
+            .probe4(dot_master_state_out), // input wire [2:0]  probe4 
+            .probe5(dot_product_out), // input wire [59:0]  probe5 
+            .probe6(focus_chroma_out), // input wire [191:0]  probe6 
+            .probe7(fifo_out_out), // input wire [191:0]  probe7
+            .probe8(data_count),
+            .probe9(fifo_full)
+        );
         
     // Let's only care about the range from index 0 to 1023, which represents frequencies 0 to omega/2
     // where omega is the nyquist frequency (sample rate / 2)
@@ -295,14 +299,29 @@ module nexys4_fft_demo (
                                     .chroma(chroma),
                                     .done(chroma_done));
     wire new_peak, peak;
-    
+    wire [4:0] focus_index_out;
+    wire [4:0] cur_index_out;
+    wire [2:0] dot_master_state_out;
+    wire [59:0] dot_product_out;
+    wire [191:0] focus_chroma_out;
+    wire [191:0] fifo_out_out;
+    wire [4:0] data_count;
+    wire fifo_full;
     novelty n(.chroma_in(chroma),
               .new_chroma(chroma_done),
               .clk(clk_104mhz),
               .reset(0),
               .new_peak(new_peak),
               .peak(peak),
-              .mid_novelty(mid_novelty));
+              .mid_novelty(mid_novelty),
+              .focus_index_out(focus_index_out),
+              .cur_index_out(cur_index_out),
+              .dot_master_state_out(dot_master_state_out),
+              .dot_product_out(dot_product_out),
+              .focus_chroma_out(focus_chroma_out),
+              .fifo_out_out(fifo_out_out),
+              .data_count(data_count),
+              .fifo_full(fifo_full));
 
 //////////////////////////////////////////////////////////////////////////////////
 //  

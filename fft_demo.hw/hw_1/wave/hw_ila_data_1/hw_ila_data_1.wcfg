@@ -9,11 +9,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1072001fs"></ZoomEndTime>
+      <ZoomStartTime time="20607fs"></ZoomStartTime>
+      <ZoomEndTime time="25968fs"></ZoomEndTime>
       <Cursor1Time time="1000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="5" />
+   <WVObjectSize size="10" />
    <wave_markers>
    </wave_markers>
    <wvobject type="logic" fp_name="clk_104mhz">
@@ -23,32 +23,65 @@
       <obj_property name="ObjectShortName">clk_104mhz</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fhead">
+   <wvobject type="logic" fp_name="chroma_done">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">fhead[11:0]</obj_property>
-      <obj_property name="ObjectShortName">fhead[11:0]</obj_property>
+      <obj_property name="ElementShortName">chroma_done</obj_property>
+      <obj_property name="ObjectShortName">chroma_done</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="dot_master_state_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">dot_master_state_out[2:0]</obj_property>
+      <obj_property name="ObjectShortName">dot_master_state_out[2:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fsample">
+   <wvobject type="array" fp_name="cur_index_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">fsample[15:0]</obj_property>
-      <obj_property name="ObjectShortName">fsample[15:0]</obj_property>
+      <obj_property name="ElementShortName">cur_index_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_index_out[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="focus_index_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">focus_index_out[4:0]</obj_property>
+      <obj_property name="ObjectShortName">focus_index_out[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="fifo_out_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fifo_out_out[191:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_out_out[191:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="hanning_value">
+   <wvobject type="array" fp_name="focus_chroma_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">hanning_value[15:0]</obj_property>
-      <obj_property name="ObjectShortName">hanning_value[15:0]</obj_property>
+      <obj_property name="ElementShortName">focus_chroma_out[191:0]</obj_property>
+      <obj_property name="ObjectShortName">focus_chroma_out[191:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="prev_prev_osample64">
+   <wvobject type="array" fp_name="dot_product_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">prev_prev_osample64[14:0]</obj_property>
-      <obj_property name="ObjectShortName">prev_prev_osample64[14:0]</obj_property>
+      <obj_property name="ElementShortName">dot_product_out[59:0]</obj_property>
+      <obj_property name="ObjectShortName">dot_product_out[59:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="data_count">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">data_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">data_count[4:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="fifo_full">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
    </wvobject>
 </wave_config>

@@ -4,7 +4,7 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="HW_ILA" value="probey"/>
         <Option Id="PROBE_PORT" value="0"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
@@ -13,119 +13,567 @@
         <net name="clk_104mhz"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="HW_ILA" value="probey"/>
         <Option Id="PROBE_PORT" value="1"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="hanning_value[15]"/>
-        <net name="hanning_value[14]"/>
-        <net name="hanning_value[13]"/>
-        <net name="hanning_value[12]"/>
-        <net name="hanning_value[11]"/>
-        <net name="hanning_value[10]"/>
-        <net name="hanning_value[9]"/>
-        <net name="hanning_value[8]"/>
-        <net name="hanning_value[7]"/>
-        <net name="hanning_value[6]"/>
-        <net name="hanning_value[5]"/>
-        <net name="hanning_value[4]"/>
-        <net name="hanning_value[3]"/>
-        <net name="hanning_value[2]"/>
-        <net name="hanning_value[1]"/>
-        <net name="hanning_value[0]"/>
+        <net name="chroma_done"/>
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="HW_ILA" value="probey"/>
         <Option Id="PROBE_PORT" value="2"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="15"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="5"/>
       </probeOptions>
       <nets>
-        <net name="prev_prev_osample64[14]"/>
-        <net name="prev_prev_osample64[13]"/>
-        <net name="prev_prev_osample64[12]"/>
-        <net name="prev_prev_osample64[11]"/>
-        <net name="prev_prev_osample64[10]"/>
-        <net name="prev_prev_osample64[9]"/>
-        <net name="prev_prev_osample64[8]"/>
-        <net name="prev_prev_osample64[7]"/>
-        <net name="prev_prev_osample64[6]"/>
-        <net name="prev_prev_osample64[5]"/>
-        <net name="prev_prev_osample64[4]"/>
-        <net name="prev_prev_osample64[3]"/>
-        <net name="prev_prev_osample64[2]"/>
-        <net name="prev_prev_osample64[1]"/>
-        <net name="prev_prev_osample64[0]"/>
+        <net name="focus_index_out[4]"/>
+        <net name="focus_index_out[3]"/>
+        <net name="focus_index_out[2]"/>
+        <net name="focus_index_out[1]"/>
+        <net name="focus_index_out[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="HW_ILA" value="probey"/>
         <Option Id="PROBE_PORT" value="3"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="12"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="5"/>
       </probeOptions>
       <nets>
-        <net name="fhead[11]"/>
-        <net name="fhead[10]"/>
-        <net name="fhead[9]"/>
-        <net name="fhead[8]"/>
-        <net name="fhead[7]"/>
-        <net name="fhead[6]"/>
-        <net name="fhead[5]"/>
-        <net name="fhead[4]"/>
-        <net name="fhead[3]"/>
-        <net name="fhead[2]"/>
-        <net name="fhead[1]"/>
-        <net name="fhead[0]"/>
+        <net name="cur_index_out[4]"/>
+        <net name="cur_index_out[3]"/>
+        <net name="cur_index_out[2]"/>
+        <net name="cur_index_out[1]"/>
+        <net name="cur_index_out[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="HW_ILA" value="your_instance_name"/>
+        <Option Id="HW_ILA" value="probey"/>
         <Option Id="PROBE_PORT" value="4"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="3"/>
       </probeOptions>
       <nets>
-        <net name="fsample[15]"/>
-        <net name="fsample[14]"/>
-        <net name="fsample[13]"/>
-        <net name="fsample[12]"/>
-        <net name="fsample[11]"/>
-        <net name="fsample[10]"/>
-        <net name="fsample[9]"/>
-        <net name="fsample[8]"/>
-        <net name="fsample[7]"/>
-        <net name="fsample[6]"/>
-        <net name="fsample[5]"/>
-        <net name="fsample[4]"/>
-        <net name="fsample[3]"/>
-        <net name="fsample[2]"/>
-        <net name="fsample[1]"/>
-        <net name="fsample[0]"/>
+        <net name="dot_master_state_out[2]"/>
+        <net name="dot_master_state_out[1]"/>
+        <net name="dot_master_state_out[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="probey"/>
+        <Option Id="PROBE_PORT" value="5"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="60"/>
+      </probeOptions>
+      <nets>
+        <net name="dot_product_out[59]"/>
+        <net name="dot_product_out[58]"/>
+        <net name="dot_product_out[57]"/>
+        <net name="dot_product_out[56]"/>
+        <net name="dot_product_out[55]"/>
+        <net name="dot_product_out[54]"/>
+        <net name="dot_product_out[53]"/>
+        <net name="dot_product_out[52]"/>
+        <net name="dot_product_out[51]"/>
+        <net name="dot_product_out[50]"/>
+        <net name="dot_product_out[49]"/>
+        <net name="dot_product_out[48]"/>
+        <net name="dot_product_out[47]"/>
+        <net name="dot_product_out[46]"/>
+        <net name="dot_product_out[45]"/>
+        <net name="dot_product_out[44]"/>
+        <net name="dot_product_out[43]"/>
+        <net name="dot_product_out[42]"/>
+        <net name="dot_product_out[41]"/>
+        <net name="dot_product_out[40]"/>
+        <net name="dot_product_out[39]"/>
+        <net name="dot_product_out[38]"/>
+        <net name="dot_product_out[37]"/>
+        <net name="dot_product_out[36]"/>
+        <net name="dot_product_out[35]"/>
+        <net name="dot_product_out[34]"/>
+        <net name="dot_product_out[33]"/>
+        <net name="dot_product_out[32]"/>
+        <net name="dot_product_out[31]"/>
+        <net name="dot_product_out[30]"/>
+        <net name="dot_product_out[29]"/>
+        <net name="dot_product_out[28]"/>
+        <net name="dot_product_out[27]"/>
+        <net name="dot_product_out[26]"/>
+        <net name="dot_product_out[25]"/>
+        <net name="dot_product_out[24]"/>
+        <net name="dot_product_out[23]"/>
+        <net name="dot_product_out[22]"/>
+        <net name="dot_product_out[21]"/>
+        <net name="dot_product_out[20]"/>
+        <net name="dot_product_out[19]"/>
+        <net name="dot_product_out[18]"/>
+        <net name="dot_product_out[17]"/>
+        <net name="dot_product_out[16]"/>
+        <net name="dot_product_out[15]"/>
+        <net name="dot_product_out[14]"/>
+        <net name="dot_product_out[13]"/>
+        <net name="dot_product_out[12]"/>
+        <net name="dot_product_out[11]"/>
+        <net name="dot_product_out[10]"/>
+        <net name="dot_product_out[9]"/>
+        <net name="dot_product_out[8]"/>
+        <net name="dot_product_out[7]"/>
+        <net name="dot_product_out[6]"/>
+        <net name="dot_product_out[5]"/>
+        <net name="dot_product_out[4]"/>
+        <net name="dot_product_out[3]"/>
+        <net name="dot_product_out[2]"/>
+        <net name="dot_product_out[1]"/>
+        <net name="dot_product_out[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="probey"/>
+        <Option Id="PROBE_PORT" value="6"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="192"/>
+      </probeOptions>
+      <nets>
+        <net name="focus_chroma_out[191]"/>
+        <net name="focus_chroma_out[190]"/>
+        <net name="focus_chroma_out[189]"/>
+        <net name="focus_chroma_out[188]"/>
+        <net name="focus_chroma_out[187]"/>
+        <net name="focus_chroma_out[186]"/>
+        <net name="focus_chroma_out[185]"/>
+        <net name="focus_chroma_out[184]"/>
+        <net name="focus_chroma_out[183]"/>
+        <net name="focus_chroma_out[182]"/>
+        <net name="focus_chroma_out[181]"/>
+        <net name="focus_chroma_out[180]"/>
+        <net name="focus_chroma_out[179]"/>
+        <net name="focus_chroma_out[178]"/>
+        <net name="focus_chroma_out[177]"/>
+        <net name="focus_chroma_out[176]"/>
+        <net name="focus_chroma_out[175]"/>
+        <net name="focus_chroma_out[174]"/>
+        <net name="focus_chroma_out[173]"/>
+        <net name="focus_chroma_out[172]"/>
+        <net name="focus_chroma_out[171]"/>
+        <net name="focus_chroma_out[170]"/>
+        <net name="focus_chroma_out[169]"/>
+        <net name="focus_chroma_out[168]"/>
+        <net name="focus_chroma_out[167]"/>
+        <net name="focus_chroma_out[166]"/>
+        <net name="focus_chroma_out[165]"/>
+        <net name="focus_chroma_out[164]"/>
+        <net name="focus_chroma_out[163]"/>
+        <net name="focus_chroma_out[162]"/>
+        <net name="focus_chroma_out[161]"/>
+        <net name="focus_chroma_out[160]"/>
+        <net name="focus_chroma_out[159]"/>
+        <net name="focus_chroma_out[158]"/>
+        <net name="focus_chroma_out[157]"/>
+        <net name="focus_chroma_out[156]"/>
+        <net name="focus_chroma_out[155]"/>
+        <net name="focus_chroma_out[154]"/>
+        <net name="focus_chroma_out[153]"/>
+        <net name="focus_chroma_out[152]"/>
+        <net name="focus_chroma_out[151]"/>
+        <net name="focus_chroma_out[150]"/>
+        <net name="focus_chroma_out[149]"/>
+        <net name="focus_chroma_out[148]"/>
+        <net name="focus_chroma_out[147]"/>
+        <net name="focus_chroma_out[146]"/>
+        <net name="focus_chroma_out[145]"/>
+        <net name="focus_chroma_out[144]"/>
+        <net name="focus_chroma_out[143]"/>
+        <net name="focus_chroma_out[142]"/>
+        <net name="focus_chroma_out[141]"/>
+        <net name="focus_chroma_out[140]"/>
+        <net name="focus_chroma_out[139]"/>
+        <net name="focus_chroma_out[138]"/>
+        <net name="focus_chroma_out[137]"/>
+        <net name="focus_chroma_out[136]"/>
+        <net name="focus_chroma_out[135]"/>
+        <net name="focus_chroma_out[134]"/>
+        <net name="focus_chroma_out[133]"/>
+        <net name="focus_chroma_out[132]"/>
+        <net name="focus_chroma_out[131]"/>
+        <net name="focus_chroma_out[130]"/>
+        <net name="focus_chroma_out[129]"/>
+        <net name="focus_chroma_out[128]"/>
+        <net name="focus_chroma_out[127]"/>
+        <net name="focus_chroma_out[126]"/>
+        <net name="focus_chroma_out[125]"/>
+        <net name="focus_chroma_out[124]"/>
+        <net name="focus_chroma_out[123]"/>
+        <net name="focus_chroma_out[122]"/>
+        <net name="focus_chroma_out[121]"/>
+        <net name="focus_chroma_out[120]"/>
+        <net name="focus_chroma_out[119]"/>
+        <net name="focus_chroma_out[118]"/>
+        <net name="focus_chroma_out[117]"/>
+        <net name="focus_chroma_out[116]"/>
+        <net name="focus_chroma_out[115]"/>
+        <net name="focus_chroma_out[114]"/>
+        <net name="focus_chroma_out[113]"/>
+        <net name="focus_chroma_out[112]"/>
+        <net name="focus_chroma_out[111]"/>
+        <net name="focus_chroma_out[110]"/>
+        <net name="focus_chroma_out[109]"/>
+        <net name="focus_chroma_out[108]"/>
+        <net name="focus_chroma_out[107]"/>
+        <net name="focus_chroma_out[106]"/>
+        <net name="focus_chroma_out[105]"/>
+        <net name="focus_chroma_out[104]"/>
+        <net name="focus_chroma_out[103]"/>
+        <net name="focus_chroma_out[102]"/>
+        <net name="focus_chroma_out[101]"/>
+        <net name="focus_chroma_out[100]"/>
+        <net name="focus_chroma_out[99]"/>
+        <net name="focus_chroma_out[98]"/>
+        <net name="focus_chroma_out[97]"/>
+        <net name="focus_chroma_out[96]"/>
+        <net name="focus_chroma_out[95]"/>
+        <net name="focus_chroma_out[94]"/>
+        <net name="focus_chroma_out[93]"/>
+        <net name="focus_chroma_out[92]"/>
+        <net name="focus_chroma_out[91]"/>
+        <net name="focus_chroma_out[90]"/>
+        <net name="focus_chroma_out[89]"/>
+        <net name="focus_chroma_out[88]"/>
+        <net name="focus_chroma_out[87]"/>
+        <net name="focus_chroma_out[86]"/>
+        <net name="focus_chroma_out[85]"/>
+        <net name="focus_chroma_out[84]"/>
+        <net name="focus_chroma_out[83]"/>
+        <net name="focus_chroma_out[82]"/>
+        <net name="focus_chroma_out[81]"/>
+        <net name="focus_chroma_out[80]"/>
+        <net name="focus_chroma_out[79]"/>
+        <net name="focus_chroma_out[78]"/>
+        <net name="focus_chroma_out[77]"/>
+        <net name="focus_chroma_out[76]"/>
+        <net name="focus_chroma_out[75]"/>
+        <net name="focus_chroma_out[74]"/>
+        <net name="focus_chroma_out[73]"/>
+        <net name="focus_chroma_out[72]"/>
+        <net name="focus_chroma_out[71]"/>
+        <net name="focus_chroma_out[70]"/>
+        <net name="focus_chroma_out[69]"/>
+        <net name="focus_chroma_out[68]"/>
+        <net name="focus_chroma_out[67]"/>
+        <net name="focus_chroma_out[66]"/>
+        <net name="focus_chroma_out[65]"/>
+        <net name="focus_chroma_out[64]"/>
+        <net name="focus_chroma_out[63]"/>
+        <net name="focus_chroma_out[62]"/>
+        <net name="focus_chroma_out[61]"/>
+        <net name="focus_chroma_out[60]"/>
+        <net name="focus_chroma_out[59]"/>
+        <net name="focus_chroma_out[58]"/>
+        <net name="focus_chroma_out[57]"/>
+        <net name="focus_chroma_out[56]"/>
+        <net name="focus_chroma_out[55]"/>
+        <net name="focus_chroma_out[54]"/>
+        <net name="focus_chroma_out[53]"/>
+        <net name="focus_chroma_out[52]"/>
+        <net name="focus_chroma_out[51]"/>
+        <net name="focus_chroma_out[50]"/>
+        <net name="focus_chroma_out[49]"/>
+        <net name="focus_chroma_out[48]"/>
+        <net name="focus_chroma_out[47]"/>
+        <net name="focus_chroma_out[46]"/>
+        <net name="focus_chroma_out[45]"/>
+        <net name="focus_chroma_out[44]"/>
+        <net name="focus_chroma_out[43]"/>
+        <net name="focus_chroma_out[42]"/>
+        <net name="focus_chroma_out[41]"/>
+        <net name="focus_chroma_out[40]"/>
+        <net name="focus_chroma_out[39]"/>
+        <net name="focus_chroma_out[38]"/>
+        <net name="focus_chroma_out[37]"/>
+        <net name="focus_chroma_out[36]"/>
+        <net name="focus_chroma_out[35]"/>
+        <net name="focus_chroma_out[34]"/>
+        <net name="focus_chroma_out[33]"/>
+        <net name="focus_chroma_out[32]"/>
+        <net name="focus_chroma_out[31]"/>
+        <net name="focus_chroma_out[30]"/>
+        <net name="focus_chroma_out[29]"/>
+        <net name="focus_chroma_out[28]"/>
+        <net name="focus_chroma_out[27]"/>
+        <net name="focus_chroma_out[26]"/>
+        <net name="focus_chroma_out[25]"/>
+        <net name="focus_chroma_out[24]"/>
+        <net name="focus_chroma_out[23]"/>
+        <net name="focus_chroma_out[22]"/>
+        <net name="focus_chroma_out[21]"/>
+        <net name="focus_chroma_out[20]"/>
+        <net name="focus_chroma_out[19]"/>
+        <net name="focus_chroma_out[18]"/>
+        <net name="focus_chroma_out[17]"/>
+        <net name="focus_chroma_out[16]"/>
+        <net name="focus_chroma_out[15]"/>
+        <net name="focus_chroma_out[14]"/>
+        <net name="focus_chroma_out[13]"/>
+        <net name="focus_chroma_out[12]"/>
+        <net name="focus_chroma_out[11]"/>
+        <net name="focus_chroma_out[10]"/>
+        <net name="focus_chroma_out[9]"/>
+        <net name="focus_chroma_out[8]"/>
+        <net name="focus_chroma_out[7]"/>
+        <net name="focus_chroma_out[6]"/>
+        <net name="focus_chroma_out[5]"/>
+        <net name="focus_chroma_out[4]"/>
+        <net name="focus_chroma_out[3]"/>
+        <net name="focus_chroma_out[2]"/>
+        <net name="focus_chroma_out[1]"/>
+        <net name="focus_chroma_out[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="probey"/>
+        <Option Id="PROBE_PORT" value="7"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="192"/>
+      </probeOptions>
+      <nets>
+        <net name="fifo_out_out[191]"/>
+        <net name="fifo_out_out[190]"/>
+        <net name="fifo_out_out[189]"/>
+        <net name="fifo_out_out[188]"/>
+        <net name="fifo_out_out[187]"/>
+        <net name="fifo_out_out[186]"/>
+        <net name="fifo_out_out[185]"/>
+        <net name="fifo_out_out[184]"/>
+        <net name="fifo_out_out[183]"/>
+        <net name="fifo_out_out[182]"/>
+        <net name="fifo_out_out[181]"/>
+        <net name="fifo_out_out[180]"/>
+        <net name="fifo_out_out[179]"/>
+        <net name="fifo_out_out[178]"/>
+        <net name="fifo_out_out[177]"/>
+        <net name="fifo_out_out[176]"/>
+        <net name="fifo_out_out[175]"/>
+        <net name="fifo_out_out[174]"/>
+        <net name="fifo_out_out[173]"/>
+        <net name="fifo_out_out[172]"/>
+        <net name="fifo_out_out[171]"/>
+        <net name="fifo_out_out[170]"/>
+        <net name="fifo_out_out[169]"/>
+        <net name="fifo_out_out[168]"/>
+        <net name="fifo_out_out[167]"/>
+        <net name="fifo_out_out[166]"/>
+        <net name="fifo_out_out[165]"/>
+        <net name="fifo_out_out[164]"/>
+        <net name="fifo_out_out[163]"/>
+        <net name="fifo_out_out[162]"/>
+        <net name="fifo_out_out[161]"/>
+        <net name="fifo_out_out[160]"/>
+        <net name="fifo_out_out[159]"/>
+        <net name="fifo_out_out[158]"/>
+        <net name="fifo_out_out[157]"/>
+        <net name="fifo_out_out[156]"/>
+        <net name="fifo_out_out[155]"/>
+        <net name="fifo_out_out[154]"/>
+        <net name="fifo_out_out[153]"/>
+        <net name="fifo_out_out[152]"/>
+        <net name="fifo_out_out[151]"/>
+        <net name="fifo_out_out[150]"/>
+        <net name="fifo_out_out[149]"/>
+        <net name="fifo_out_out[148]"/>
+        <net name="fifo_out_out[147]"/>
+        <net name="fifo_out_out[146]"/>
+        <net name="fifo_out_out[145]"/>
+        <net name="fifo_out_out[144]"/>
+        <net name="fifo_out_out[143]"/>
+        <net name="fifo_out_out[142]"/>
+        <net name="fifo_out_out[141]"/>
+        <net name="fifo_out_out[140]"/>
+        <net name="fifo_out_out[139]"/>
+        <net name="fifo_out_out[138]"/>
+        <net name="fifo_out_out[137]"/>
+        <net name="fifo_out_out[136]"/>
+        <net name="fifo_out_out[135]"/>
+        <net name="fifo_out_out[134]"/>
+        <net name="fifo_out_out[133]"/>
+        <net name="fifo_out_out[132]"/>
+        <net name="fifo_out_out[131]"/>
+        <net name="fifo_out_out[130]"/>
+        <net name="fifo_out_out[129]"/>
+        <net name="fifo_out_out[128]"/>
+        <net name="fifo_out_out[127]"/>
+        <net name="fifo_out_out[126]"/>
+        <net name="fifo_out_out[125]"/>
+        <net name="fifo_out_out[124]"/>
+        <net name="fifo_out_out[123]"/>
+        <net name="fifo_out_out[122]"/>
+        <net name="fifo_out_out[121]"/>
+        <net name="fifo_out_out[120]"/>
+        <net name="fifo_out_out[119]"/>
+        <net name="fifo_out_out[118]"/>
+        <net name="fifo_out_out[117]"/>
+        <net name="fifo_out_out[116]"/>
+        <net name="fifo_out_out[115]"/>
+        <net name="fifo_out_out[114]"/>
+        <net name="fifo_out_out[113]"/>
+        <net name="fifo_out_out[112]"/>
+        <net name="fifo_out_out[111]"/>
+        <net name="fifo_out_out[110]"/>
+        <net name="fifo_out_out[109]"/>
+        <net name="fifo_out_out[108]"/>
+        <net name="fifo_out_out[107]"/>
+        <net name="fifo_out_out[106]"/>
+        <net name="fifo_out_out[105]"/>
+        <net name="fifo_out_out[104]"/>
+        <net name="fifo_out_out[103]"/>
+        <net name="fifo_out_out[102]"/>
+        <net name="fifo_out_out[101]"/>
+        <net name="fifo_out_out[100]"/>
+        <net name="fifo_out_out[99]"/>
+        <net name="fifo_out_out[98]"/>
+        <net name="fifo_out_out[97]"/>
+        <net name="fifo_out_out[96]"/>
+        <net name="fifo_out_out[95]"/>
+        <net name="fifo_out_out[94]"/>
+        <net name="fifo_out_out[93]"/>
+        <net name="fifo_out_out[92]"/>
+        <net name="fifo_out_out[91]"/>
+        <net name="fifo_out_out[90]"/>
+        <net name="fifo_out_out[89]"/>
+        <net name="fifo_out_out[88]"/>
+        <net name="fifo_out_out[87]"/>
+        <net name="fifo_out_out[86]"/>
+        <net name="fifo_out_out[85]"/>
+        <net name="fifo_out_out[84]"/>
+        <net name="fifo_out_out[83]"/>
+        <net name="fifo_out_out[82]"/>
+        <net name="fifo_out_out[81]"/>
+        <net name="fifo_out_out[80]"/>
+        <net name="fifo_out_out[79]"/>
+        <net name="fifo_out_out[78]"/>
+        <net name="fifo_out_out[77]"/>
+        <net name="fifo_out_out[76]"/>
+        <net name="fifo_out_out[75]"/>
+        <net name="fifo_out_out[74]"/>
+        <net name="fifo_out_out[73]"/>
+        <net name="fifo_out_out[72]"/>
+        <net name="fifo_out_out[71]"/>
+        <net name="fifo_out_out[70]"/>
+        <net name="fifo_out_out[69]"/>
+        <net name="fifo_out_out[68]"/>
+        <net name="fifo_out_out[67]"/>
+        <net name="fifo_out_out[66]"/>
+        <net name="fifo_out_out[65]"/>
+        <net name="fifo_out_out[64]"/>
+        <net name="fifo_out_out[63]"/>
+        <net name="fifo_out_out[62]"/>
+        <net name="fifo_out_out[61]"/>
+        <net name="fifo_out_out[60]"/>
+        <net name="fifo_out_out[59]"/>
+        <net name="fifo_out_out[58]"/>
+        <net name="fifo_out_out[57]"/>
+        <net name="fifo_out_out[56]"/>
+        <net name="fifo_out_out[55]"/>
+        <net name="fifo_out_out[54]"/>
+        <net name="fifo_out_out[53]"/>
+        <net name="fifo_out_out[52]"/>
+        <net name="fifo_out_out[51]"/>
+        <net name="fifo_out_out[50]"/>
+        <net name="fifo_out_out[49]"/>
+        <net name="fifo_out_out[48]"/>
+        <net name="fifo_out_out[47]"/>
+        <net name="fifo_out_out[46]"/>
+        <net name="fifo_out_out[45]"/>
+        <net name="fifo_out_out[44]"/>
+        <net name="fifo_out_out[43]"/>
+        <net name="fifo_out_out[42]"/>
+        <net name="fifo_out_out[41]"/>
+        <net name="fifo_out_out[40]"/>
+        <net name="fifo_out_out[39]"/>
+        <net name="fifo_out_out[38]"/>
+        <net name="fifo_out_out[37]"/>
+        <net name="fifo_out_out[36]"/>
+        <net name="fifo_out_out[35]"/>
+        <net name="fifo_out_out[34]"/>
+        <net name="fifo_out_out[33]"/>
+        <net name="fifo_out_out[32]"/>
+        <net name="fifo_out_out[31]"/>
+        <net name="fifo_out_out[30]"/>
+        <net name="fifo_out_out[29]"/>
+        <net name="fifo_out_out[28]"/>
+        <net name="fifo_out_out[27]"/>
+        <net name="fifo_out_out[26]"/>
+        <net name="fifo_out_out[25]"/>
+        <net name="fifo_out_out[24]"/>
+        <net name="fifo_out_out[23]"/>
+        <net name="fifo_out_out[22]"/>
+        <net name="fifo_out_out[21]"/>
+        <net name="fifo_out_out[20]"/>
+        <net name="fifo_out_out[19]"/>
+        <net name="fifo_out_out[18]"/>
+        <net name="fifo_out_out[17]"/>
+        <net name="fifo_out_out[16]"/>
+        <net name="fifo_out_out[15]"/>
+        <net name="fifo_out_out[14]"/>
+        <net name="fifo_out_out[13]"/>
+        <net name="fifo_out_out[12]"/>
+        <net name="fifo_out_out[11]"/>
+        <net name="fifo_out_out[10]"/>
+        <net name="fifo_out_out[9]"/>
+        <net name="fifo_out_out[8]"/>
+        <net name="fifo_out_out[7]"/>
+        <net name="fifo_out_out[6]"/>
+        <net name="fifo_out_out[5]"/>
+        <net name="fifo_out_out[4]"/>
+        <net name="fifo_out_out[3]"/>
+        <net name="fifo_out_out[2]"/>
+        <net name="fifo_out_out[1]"/>
+        <net name="fifo_out_out[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="HW_ILA" value="probey"/>
+        <Option Id="PROBE_PORT" value="8"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="5"/>
+      </probeOptions>
+      <nets>
+        <net name="data_count[4]"/>
+        <net name="data_count[3]"/>
+        <net name="data_count[2]"/>
+        <net name="data_count[1]"/>
+        <net name="data_count[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="HW_ILA" value="your_instance_name"/>
-        <Option Id="PROBE_PORT" value="5"/>
+        <Option Id="HW_ILA" value="probey"/>
+        <Option Id="PROBE_PORT" value="9"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="prev_prev_done_osample64"/>
+        <net name="fifo_full"/>
       </nets>
     </probe>
   </probeset>

@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
          "-log nexys4_fft_demo.vdi -applog -m64 -messageDb vivado.pb -mode batch -source nexys4_fft_demo.tcl -notrace" );
 

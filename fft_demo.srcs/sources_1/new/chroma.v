@@ -21,7 +21,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 parameter CHROMA_PRECISION = 16;
 parameter CHROMA_WIDTH = (12*CHROMA_PRECISION)-1;
-parameter DOT_PRECISION = 44 - 1;
+parameter DOT_PRECISION = 60 - 1;
 parameter PEAK_THRESHOLD = 100;
 
 module chroma_calculator(
@@ -122,9 +122,16 @@ module dot_master(
     output reg fifo_write,
     input wire fifo_full,
     input wire fifo_empty,
-    input wire[CHROMA_WIDTH:0] fifo_last
+    input wire[CHROMA_WIDTH:0] fifo_last,
+    output wire [4:0] focus_index_out,
+    output wire [4:0] cur_index_out,
+    output wire [2:0] state_out,
+    output wire [DOT_PRECISION:0] dot_product_out,
+    output wire [CHROMA_WIDTH:0] focus_chroma_out,
+    output wire [CHROMA_WIDTH:0] fifo_out_out
     );
-   
+
+        
     reg[2:0] state;
     parameter STATE_IDLE = 0;
     parameter STATE_DELAY_FOCUS = 1;
@@ -143,7 +150,7 @@ module dot_master(
    
     dot_engine d(
         .dot_a(focus_chroma),
-        .dot_b(state == STATE_ADD_LAST ? fifo_last : fifo_out),
+        .dot_b(fifo_out),
         .out(dot_product)
     );
    
@@ -200,41 +207,33 @@ module dot_master(
                 // Note that we will continue to cycle through, as we are still fifo_reading and fifo_writing.
                
                 // Only include last if told to do so, and only include first if told to do so.
-                if (!(include_first == 0 && cur_index == 0)) begin
+                if (include_first || cur_index != 0) begin
                     // We have already computed dot_product between the current index and focus index
                     // using the dot engine module.
                    
                     // If both indexes are <= 15 or both > 15, add.  Otherwise, subtract.
                     // This is an implicit application of the checkerboard kernel.
                     if (op_on_last) begin
-                        if (cur_index > 16) accum <= accum + $signed(dot_product);
-                        else accum <= accum - $signed(dot_product);
+                        if (cur_index > 16) accum <= accum + $signed({1'b0, dot_product});
+                        else accum <= accum - $signed({1'b0, dot_product});
                     end
                     else if (cur_index != focus_index) begin
                         if ((cur_index <= 15 && focus_index <= 15) || (cur_index > 15 && focus_index > 15)) begin
-                            accum <= accum + $signed(dot_product);
-                        end else accum <= accum - $signed(dot_product);
+                            accum <= accum + $signed({1'b0, dot_product});
+                        end else accum <= accum - $signed({1'b0, dot_product});
                     end
                 end
                
                 // After last element, advance state and halt pulling off loop
+                if (cur_index == 1) fifo_read <= 0;
                 if (cur_index == 0) begin
-                    state <= (include_last && !op_on_last) ? STATE_ADD_LAST : STATE_DONE;
-                    fifo_read <= 0;
+                    state <= STATE_DONE;
                 end else
                
                 // Cycle fifo
                 fifo_write <= 1;
                 fifo_in <= fifo_out;
                 cur_index <= cur_index - 1;
-            end
-            
-            STATE_ADD_LAST: begin
-                fifo_write <= 0;
-                state <= STATE_DONE;
-                
-                if (focus_index > 15) accum <= accum + $signed(dot_product);
-                else accum <= accum - $signed(dot_product);
             end
            
             STATE_DONE: begin
@@ -252,6 +251,12 @@ module dot_master(
             default: state <= STATE_IDLE;
         endcase
     end
+    assign focus_index_out = focus_index;
+    assign cur_index_out = cur_index;
+    assign state_out = state;
+    assign dot_product_out = dot_product;
+    assign focus_chroma_out = focus_chroma;
+    assign fifo_out_out = fifo_out;
 endmodule
  
 module novelty(
@@ -262,7 +267,15 @@ module novelty(
    
     output reg new_peak,
     output reg peak,
-    output reg signed[DOT_PRECISION:0] mid_novelty
+    output reg signed[DOT_PRECISION:0] mid_novelty,
+    output wire [4:0] focus_index_out,
+    output wire [4:0] cur_index_out,
+    output wire [2:0] dot_master_state_out,
+    output wire [DOT_PRECISION:0] dot_product_out,
+    output wire [CHROMA_WIDTH:0] focus_chroma_out,
+    output wire [CHROMA_WIDTH:0] fifo_out_out,
+    output wire [4:0] data_count,
+    output wire fifo_full
     );
    
     reg[CHROMA_WIDTH:0] fifo_in_novelty;
@@ -272,14 +285,14 @@ module novelty(
    
     wire[CHROMA_WIDTH:0] fifo_out;
     reg[CHROMA_WIDTH:0] fifo_last;
-    wire fifo_full, fifo_empty;
+    wire fifo_empty;
    
     reg fifo_control;
     parameter NOVELTY_CONTROL = 1;
     parameter DOT_CONTROL = 0;
-    wire fifo_in = fifo_control ? fifo_in_novelty : fifo_in_dot;
+    wire [CHROMA_WIDTH:0] fifo_in = fifo_control ? fifo_in_novelty : fifo_in_dot;
     wire fifo_write = fifo_control ? fifo_write_novelty : fifo_write_dot;
-    wire fifo_read = fifo_control ? fifo_read_novelty : fifo_read_dot;
+    wire fifo_read = fifo_full ? (fifo_control ? fifo_read_novelty : fifo_read_dot) : 0;
    
     chroma_fifo c (
       .srst(reset),
@@ -289,7 +302,8 @@ module novelty(
       .rd_en(fifo_read),
       .dout(fifo_out),  
       .full(fifo_full),
-      .empty(fifo_empty)
+      .empty(fifo_empty),
+      .data_count(data_count)
     );
  
     reg dot_start, dot_include_last, dot_include_first;
@@ -316,10 +330,16 @@ module novelty(
         .fifo_empty(fifo_empty),
         
         .fifo_last(fifo_last),
-        .op_on_last(fifo_op_on_last)
+        .op_on_last(fifo_op_on_last),
+        .focus_index_out(focus_index_out),
+        .cur_index_out(cur_index_out),
+        .state_out(dot_master_state_out),
+        .dot_product_out(dot_product_out),
+        .focus_chroma_out(focus_chroma_out),
+        .fifo_out_out(fifo_out_out)
     );
    
-    reg[3:0] state;
+    reg[2:0] state = 0;
    
     parameter STATE_IDLE = 0;
     parameter STATE_GET_LAST = 6;
@@ -334,15 +354,23 @@ module novelty(
     reg signed[DOT_PRECISION:0] old_novelty = 0;
    
     always @(posedge clk) begin
-        if (reset) state <= STATE_IDLE;
-       
+        if (reset) begin
+            state <= STATE_IDLE;
+            dot_start <= 0;
+            fifo_op_on_last <= 0;
+            fifo_control <= NOVELTY_CONTROL;
+            new_peak <= 0;
+            fifo_write_novelty <= 0;
+            fifo_read_novelty <= 0;
+        end
         case (state)
             STATE_IDLE: begin
                 dot_start <= 0;
                 fifo_op_on_last <= 0;
                 fifo_control <= NOVELTY_CONTROL;
                 new_peak <= 0;
-               
+                fifo_write_novelty <= 0;
+                
                
                 // On receiving a new chromogram, push it into the Fifo,
                 // then start the state machine.
@@ -353,18 +381,21 @@ module novelty(
                    
                     // Transition to new state
                     state <= STATE_GET_LAST;
-                end else fifo_write_novelty <= 0;
+                end
+                else begin
+                    fifo_read_novelty <= 0;
+                end
                
             end
             
             STATE_GET_LAST: begin
                 fifo_write_novelty <= 1;
+                fifo_read_novelty <= 0;
                 state <= STATE_START_FIRST;
             end
            
             STATE_START_FIRST: begin
                 fifo_write_novelty <= 0;
-                fifo_read_novelty <= 0;
                 fifo_last <= fifo_out;
                 fifo_control <= DOT_CONTROL; // Release fifo control to dot product
                
@@ -389,7 +420,7 @@ module novelty(
                     dot_start <= 1;
                     dot_index <= 16; // middle value, previously misclassified
                     dot_include_first <= 0; // don't include first, as this is correction
-                    dot_include_last <= 1; // do include last, as correction
+                    dot_include_last <= 0; // do not include last, as correction
                    
                     // Move to waiting state
                     state <= STATE_END_MIDDLE;

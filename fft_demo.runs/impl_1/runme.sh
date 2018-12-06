@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log nexys4_fft_demo.vdi -applog -m64 -messageDb vivado.pb -mode batch -source nexys4_fft_demo.tcl -notrace
 
 
