@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Dec  6 00:00:59 2018">
+<application name="pa" timeStamp="Fri Dec  7 00:00:51 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b3585b34cf9d4654b8d3117be54cb615" type="ProjectID"/>
 <property name="ProjectIteration" value="101" type="ProjectIteration"/>
@@ -32,12 +32,12 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="NewProject" value="2" type="JavaHandler"/>
 <property name="OpenHardwareDashboard" value="8" type="JavaHandler"/>
 <property name="OpenHardwareManager" value="58" type="JavaHandler"/>
-<property name="OpenProject" value="5" type="JavaHandler"/>
+<property name="OpenProject" value="6" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="5" type="JavaHandler"/>
 <property name="ProgramDevice" value="44" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="2" type="JavaHandler"/>
 <property name="ProjectSummary" value="1" type="JavaHandler"/>
-<property name="RecustomizeCore" value="27" type="JavaHandler"/>
+<property name="RecustomizeCore" value="31" type="JavaHandler"/>
 <property name="ReportClockInteraction" value="1" type="JavaHandler"/>
 <property name="ReportIPStatus" value="1" type="JavaHandler"/>
 <property name="ReportTimingSummary" value="4" type="JavaHandler"/>
@@ -57,15 +57,327 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ZoomOut" value="2" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Program and Debug, Hardware Manager, Program Device], 28, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.HardwareIlaWaveformView_RUN_TRIGGER_FOR_THIS_ILA_CORE, Waveform Viewer_run_trigger" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.ProgramFpgaDialog_PROGRAM, Program" value="1" type="GuiResourceData"/>
-<property name="RDIResource.GraphicalView_ZOOM_IN, Waveform Viewer_zoom_in" value="7" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE, Re-customize IP..." value="4" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, nexys4_fft_demo (nexys4_fft_demo.v" value="4" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, IP, hanning], 6, true, false, false, false, true, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, IP, ila_0], 7, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, IP, xadc_demo], 8, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_OPEN_PROJECT, Open Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EDIT, Edit" value="2" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="3" type="GuiResourceData"/>
+<property name="chroma.v, 1, 187" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 101, 263" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 101, 400" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 102, 183" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 103, 160" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 104, 349" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 105, 264" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 105, 475" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 108, 485" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 109, 442" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 111, 471" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 111, 492" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 113, 486" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 114, 143" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 114, 233" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 114, 315" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 115, 429" value="2" type="GuiResourceData"/>
+<property name="chroma.v, 116, 213" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 116, 439" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 118, 497" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 119, 484" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 121, 223" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 122, 461" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 122, 472" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 123, 384" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 124, 262" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 125, 478" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 127, 474" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 128, 197" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 128, 383" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 129, 321" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 129, 365" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 135, 452" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 135, 476" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 135, 516" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 137, 262" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 137, 520" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 138, 214" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 139, 477" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 141, 416" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 142, 331" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 142, 395" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 145, 533" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 146, 414" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 146, 485" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 147, 411" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 148, 472" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 148, 543" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 149, 289" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 149, 354" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 149, 517" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 149, 518" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 150, 501" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 151, 173" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 151, 383" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 152, 289" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 152, 350" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 152, 354" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 153, 110" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 155, 491" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 156, 412" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 157, 278" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 157, 473" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 159, 280" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 160, 298" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 160, 391" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 161, 295" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 161, 376" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 161, 399" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 162, 369" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 162, 402" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 165, 423" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 168, 104" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 168, 357" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 171, 333" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 171, 507" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 172, 320" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 176, 398" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 177, 313" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 18, 455" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 180, 399" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 181, 473" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 182, 444" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 186, 459" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 188, 394" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 189, 295" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 189, 383" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 19, 326" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 190, 337" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 20, 192" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 202, 483" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 203, 201" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 204, 393" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 205, 223" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 206, 251" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 207, 534" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 208, 336" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 208, 397" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 209, 237" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 210, 188" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 210, 351" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 212, 215" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 213, 377" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 214, 396" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 215, 302" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 215, 390" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 216, 361" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 216, 387, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 217, 503" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 219, 80" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 22, 191" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 220, 246" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 221, 245" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 222, 155" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 222, 432" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 223, 385" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 225, 168" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 225, 453" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 227, 261" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 227, 336" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 229, 386" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 23, 175" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 230, 190" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 230, 215" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 230, 468" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 231, 415" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 232, 338" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 233, 532" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 234, 307" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 234, 409" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 234, 475" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 234, 537" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 234, 76" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 235, 250" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 236, 309" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 236, 530" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 236, 73" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 238, 323" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 24, 275" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 24, 516" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 240, 267" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 240, 349" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 241, 349" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 241, 82" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 242, 233" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 242, 319" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 242, 457" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 243, 239" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 244, 145" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 244, 364" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 245, 432" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 246, 245" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 246, 246" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 246, 97" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 248, 327" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 248, 373" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 249, 236" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 250, 277" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 251, 182" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 251, 371" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 253, 245" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 255, 192" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 256, 262" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 257, 268" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 257, 367" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 258, 305" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 259, 353" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 259, 368" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 260, 274" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 260, 430" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 261, 261" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 261, 289" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 265, 260" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 266, 138" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 267, 399" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 268, 373" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 27, 292" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 270, 424" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 273, 388" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 274, 126" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 275, 165" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 275, 274" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 277, 260" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 278, 298" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 278, 94" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 280, 115" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 280, 413" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 281, 401" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 284, 89" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 285, 296" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 286, 232" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 29, 173" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 293, 83" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 294, 261" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 295, 154" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 295, 305" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 296, 100" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 297, 351" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 297, 504" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 298, 296" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 3, 469" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 30, 247" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 301, 208" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 302, 359" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 302, 413" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 303, 144" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 303, 244" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 304, 190" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 307, 140" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 308, 428" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 308, 470" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 309, 328" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 310, 347" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 314, 277" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 314, 444" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 315, 222" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 316, 154" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 316, 398" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 318, 460" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 321, 288" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 322, 333" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 325, 358" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 329, 426" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 330, 263" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 334, 146" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 334, 513" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 336, 383" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 337, 210" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 338, 304" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 340, 188" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 341, 198" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 343, 488" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 344, 223" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 344, 282" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 344, 437" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 344, 83" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 345, 193" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 347, 215" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 349, 339" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 35, 189" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 351, 412" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 355, 156" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 357, 419" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 358, 485" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 363, 226" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 367, 374" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 370, 452" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 373, 168" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 378, 235" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 380, 278" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 380, 279" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 384, 432" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 384, 511" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 387, 279" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 389, 384" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 393, 379" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 395, 504" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 423, 536" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 424, 327" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 429, 348" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 447, 323" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 449, 221" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 45, 93" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 451, 202" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 471, 403" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 472, 407" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 479, 433" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 48, 485" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 480, 278" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 483, 442" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 491, 501" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 51, 211" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 53, 128" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 55, 551" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 56, 231" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 56, 81" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 57, 446" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 58, 549" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 59, 431" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 59, 563" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 60, 338" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 63, 514" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 67, 394" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 698, 272" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 7, 442" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 74, 445" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 75, 196" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 75, 370" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 76, 457" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 78, 233" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 78, 234" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 78, 457" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 81, 372" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 81, 461" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 818, 273, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 82, 170" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 82, 305" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 82, 408" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 82, 569" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 83, 271" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 83, 427" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 86, 528" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 86, 604" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 90, 560" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 91, 443" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 95, 233" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 95, 324" value="1" type="GuiResourceData"/>
+<property name="chroma.v, 98, 233" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="16" type="GuiMode"/>
+<property name="GuiMode" value="17" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="12" type="TclMode"/>
+<property name="TclMode" value="13" type="TclMode"/>
 </item>
 </section>
 </application>

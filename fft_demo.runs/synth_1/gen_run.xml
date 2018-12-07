@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1544070972">
-  <File Type="VDS-TIMING-PB" Name="nexys4_fft_demo_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="nexys4_fft_demo.tcl"/>
+  <File Type="RDS-RDS" Name="nexys4_fft_demo.vds"/>
   <File Type="VDS-TIMINGSUMMARY" Name="nexys4_fft_demo_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="nexys4_fft_demo_timing_summary_synth.pb"/>
   <File Type="RDS-DCP" Name="nexys4_fft_demo.dcp"/>
   <File Type="RDS-UTIL-PB" Name="nexys4_fft_demo_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="nexys4_fft_demo_utilization_synth.rpt"/>
   <File Type="RDS-PROPCONSTRS" Name="nexys4_fft_demo_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="nexys4_fft_demo.vds"/>
-  <File Type="PA-TCL" Name="nexys4_fft_demo.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/chroma.v">
@@ -106,12 +106,12 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="chroma_fifo"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="chroma_bins"/>
-  <BlockFileSet Type="BlockSrcs" Name="hanning"/>
-  <BlockFileSet Type="BlockSrcs" Name="bram_frame"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="xadc_demo"/>
   <BlockFileSet Type="BlockSrcs" Name="bram_fft"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="chroma_fifo"/>
+  <BlockFileSet Type="BlockSrcs" Name="xadc_demo"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="chroma_bins"/>
+  <BlockFileSet Type="BlockSrcs" Name="bram_frame"/>
+  <BlockFileSet Type="BlockSrcs" Name="hanning"/>
 </GenRun>

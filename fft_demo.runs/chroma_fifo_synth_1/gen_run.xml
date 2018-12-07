@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="chroma_fifo_synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1544051540">
-  <File Type="VDS-TIMING-PB" Name="chroma_fifo_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="chroma_fifo.tcl"/>
+  <File Type="RDS-RDS" Name="chroma_fifo.vds"/>
   <File Type="VDS-TIMINGSUMMARY" Name="chroma_fifo_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="chroma_fifo_timing_summary_synth.pb"/>
   <File Type="RDS-DCP" Name="chroma_fifo.dcp"/>
   <File Type="RDS-UTIL-PB" Name="chroma_fifo_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="chroma_fifo_utilization_synth.rpt"/>
   <File Type="RDS-PROPCONSTRS" Name="chroma_fifo_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="chroma_fifo.vds"/>
-  <File Type="PA-TCL" Name="chroma_fifo.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/chroma_fifo">
     <File Path="$PSRCDIR/sources_1/ip/chroma_fifo/chroma_fifo.xci">
       <FileInfo>
